@@ -6,75 +6,100 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Capa & Matéria Principal: Você vai definir o destaque de capa sobre Violet Sorrengail e seu sinete de raios. Qual abordagem prefere?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "afirmacao"
+                texto: "A Revolução das Sombras e as Verdades de Aretia - Foco na aliança contra os venin e no crescimento de Violet.",
+                afirmacao: [
+                    "MATÉRIA DE CAPA: A Revolução das Sombras revela como Violet Sorrengail domina seu sinete de raios e enfrenta os segredos de Aretia.",
+                    "DOSSIÊ DE CAPA: Um olhar aprofundado sobre a evolução do poder de Violet e o mistério por trás da ameaça dos venin."
+                ]    
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "afirmacao"
+                texto: "O Poder dos Raios e os Segredos de Navarra - Foco na política do Instituto de Guerra e nas mentiras da liderança.",
+                afirmacao: [
+                    "MATÉRIA DE CAPA: As mentiras de Navarra expostas através dos olhos de Violet e sua ligação com os dragões mais temidos.",
+                    "DOSSIÊ DE CAPA: Como o poder de conduzir raios se tornou a chave para desmantelar o véu de proteção de Basgiath."
+                ]  
             }           
-            
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
+        enunciado: "Guia de Campo (Dragões): Qual aspecto dos dragões você quer destacar nesta edição da revista?",
         alternativas: [
             {
-                texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-                afirmacao:"afirmacao"
+                texto: "Análise das Raças e Caudas - Foco visual em Cauda de Adaga, Cauda de Espada e Rabo de Escorpião.",
+                afirmacao: [
+                    "GUIA DE CAMPO: Um infográfico detalhado sobre as raças e tipos de caudas que dominam os céus de Navarra.",
+                    "GUIA DE CAMPO: Mapeamento completo sobre as características de combate das diferentes espécies de dragões."
+                ]
             },
             {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:"afirmacao"
+                texto: "Lendários e Vinculados - Destaque especial para Tairn, Sgaeyl e o mistério de Andarna.",
+                afirmacao: [
+                    "GUIA DE CAMPO: Um perfil exclusivo sobre a dinâmica de poder entre Tairn, Sgaeyl e a rara espécie de Andarna.",
+                    "GUIA DE CAMPO: As histórias dos dragões mais poderosos da quadra e a força dos seus vínculos com os cavaleiros."
+                ]
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Perfil do Quadrante: Qual setor do Instituto de Guerra de Basgiath terá a reportagem principal?",
         alternativas: [
             {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
+                texto: "Quadrante dos Cavaleiros - A rotina brutal no parapeto e o treinamento na Trilha do Processo.",
+                afirmacao: [
+                    "PERFIL DO QUADRANTE: A sobrevivência extrema no Quadrante dos Cavaleiros e o preço de se vincular a um dragão.",
+                    "PERFIL DO QUADRANTE: Bastidores da Trilha do Processo e o cotidiano de quem arrisca a vida pelos céus."
+                ]
             },
             {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
+                texto: "Quadrante dos Escribas e Curandeiros - O valor do conhecimento, da história e do tratamento de ferimentos em guerra.",
+                afirmacao: [
+                    "PERFIL DO QUADRANTE: Como os Escribas preservam o conhecimento real e os Curandeiros sustentam a linha de frente.",
+                    "PERFIL DO QUADRANTE: A importância estratégica da informação e da cura em meio ao conflito com Poromiel."
+                ]
             }
-            
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Dossiê Político: Qual conflito territorial e histórico deve ser explorado na grande reportagem do meio da revista?",
         alternativas: [
             {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
+                texto: "Navarra vs. Poromiel - Os limites do mapa e a farsa sobre os ataques nas fronteiras.",
+                afirmacao: [
+                    "DOSSIÊ POLÍTICO: A verdade sobre as fronteiras entre Navarra e Poromiel e a farsa mantida por séculos.",
+                    "DOSSIÊ POLÍTICO: Um mapa detalhado revelando as áreas reais de conflito fora dos limites de segurança."
+                ]
             },
             {
-                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao:"afirmacao"
+                texto: "O Véu de Proteção (Wards) - A magia das pedras de proteção e a ameaça iminente das forças escuras.",
+                afirmacao: [
+                    "DOSSIÊ POLÍTICO: O funcionamento do véu de proteção de Basgiath e o perigo iminente caso as pedras falhem.",
+                    "DOSSIÊ POLÍTICO: As falhas na magia das barreiras e a ascensão da magia das sombras."
+                ]
             }
-            
         ]
     },
     {
-        enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "Seção Interativa: Qual teste interativo você incluirá na última página da revista?",
         alternativas: [
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao:"afirmacao"
+                texto: "Quiz: Qual seria o seu Quadrante em Basgiath?",
+                afirmacao: [
+                    "SEÇÃO INTERATIVA: Teste final revela se você sobreviveria entre os Cavaleiros ou dominaria como Escriba.",
+                    "SEÇÃO INTERATIVA: Descubra qual área do Instituto de Guerra melhor combina com sua personalidade."
+                ]
             },
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"afirmacao"
+                texto: "Quiz: Qual dragão escolheria você no Trecho?",
+                afirmacao: [
+                    "SEÇÃO INTERATIVA: Teste de vínculo descobre qual espécie e cor de dragão escolheria você no Trecho.",
+                    "SEÇÃO INTERATIVA: Descubra se um dragão de Cauda de Adaga ou de Espada seria seu parceiro de combate."
+                ]
             }
-            
-            
         ]
-    },
+    }
 ];
 
 let atual = 0; 
@@ -82,7 +107,7 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if(atual >= perguntas.length){
+    if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
@@ -92,8 +117,8 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -101,17 +126,22 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + "\n\n";
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049...";
+function mostraResultado() {
+    caixaPerguntas.textContent = "Edição Concluída! Sumário da sua Revista Basgiath:";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = ""; 
+}
+
+function aleatorio(lista) {
+    const posicao = Math.floor(Math.random() * lista.length);
+    return lista[posicao];
 }
 
 mostraPergunta();
