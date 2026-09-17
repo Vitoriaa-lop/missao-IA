@@ -2,16 +2,27 @@
 
 :root {
     --cor-fundo: #05070a;
-    --cor-principal: #0d111a;
+    --cor-principal: rgba(13, 17, 26, 0.92);
     --cor-secundaria: #161c28; 
     --cor-destaque: #2BDEFD;
     --cor-dourada: #c5a059;
+    --cor-fogo: #ff5500;
     --cor-texto: #e2e8f0;
 }
 
 body {
     background-color: var(--cor-fundo);
-    background-image: radial-gradient(circle at 50% 20%, #172033 0%, #05070a 80%);
+    /* Fundo dinâmico: Mistura de luz mágica, brilho de fogo e textura de escamas */
+    background-image: 
+        /* Silhueta central de iluminação mágica */
+        radial-gradient(circle at 50% 30%, rgba(43, 222, 253, 0.15) 0%, transparent 60%),
+        /* Brilho inferior lembrando baforada de fogo/dragão */
+        radial-gradient(circle at 50% 90%, rgba(255, 85, 0, 0.12) 0%, transparent 50%),
+        /* Textura simulando padrão de escamas de dragão */
+        radial-gradient(rgba(195, 160, 89, 0.1) 15%, transparent 16%),
+        radial-gradient(rgba(195, 160, 89, 0.1) 15%, transparent 16%);
+    background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+    background-position: 0 0, 0 0, 0 0, 15px 15px;
     color: var(--cor-texto);
     display: flex;
     justify-content: center;
@@ -19,18 +30,50 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Marca d'água de Asas de Dragão nas laterais da tela */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    opacity: 0.08;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Moldura em formato SVG de asa de dragão */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c5a059'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E");
+}
+
+body::before {
+    left: -50px;
+    transform: translateY(-50%) rotate(-20deg) scaleX(-1);
+}
+
+body::after {
+    right: -50px;
+    transform: translateY(-50%) rotate(20deg);
 }
 
 .caixa-principal {
     background-color: var(--cor-principal);
+    backdrop-filter: blur(8px);
     width: 90%;
     max-width: 650px;
     text-align: center;
     padding: 30px;
     border: 2px solid var(--cor-dourada);
-    border-radius: 8px;
-    box-shadow: 0 0 25px rgba(197, 160, 89, 0.2), inset 0 0 15px rgba(43, 222, 253, 0.08);
+    border-radius: 12px;
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.9),
+        0 0 15px rgba(197, 160, 89, 0.3), 
+        inset 0 0 20px rgba(43, 222, 253, 0.05);
     position: relative;
+    z-index: 10;
 }
 
 h1 {
@@ -38,7 +81,7 @@ h1 {
     color: var(--cor-dourada);
     letter-spacing: 3px;
     margin-bottom: 5px;
-    text-shadow: 0 0 12px rgba(43, 222, 253, 0.5);
+    text-shadow: 0 0 12px rgba(43, 222, 253, 0.6);
     font-size: 1.8rem;
 }
 
@@ -67,7 +110,7 @@ h1 {
 }
 
 button {
-    background: linear-gradient(145deg, #121722, #1a2233);
+    background: linear-gradient(145deg, rgba(18, 23, 34, 0.9), rgba(26, 34, 51, 0.9));
     color: var(--cor-texto);
     border: 1px solid var(--cor-dourada);
     border-radius: 6px;
@@ -82,10 +125,10 @@ button {
 
 button:hover {
     background: var(--cor-dourada);
-    color: var(--cor-principal);
+    color: #000;
     font-weight: bold;
     border-color: var(--cor-destaque);
-    box-shadow: 0 0 15px rgba(43, 222, 253, 0.6);
+    box-shadow: 0 0 15px rgba(43, 222, 253, 0.7);
     transform: translateY(-2px);
 }
 
@@ -96,6 +139,6 @@ button:hover {
     white-space: pre-line;
     border-left: 3px solid var(--cor-destaque);
     padding-left: 15px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 0 8px 8px 0;
 }
