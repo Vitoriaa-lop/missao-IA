@@ -1,10 +1,10 @@
 :root {
-    --cor-fundo: #090A0F;
-    --cor-principal: #121520;
-    --cor-secundaria: #1C2130; 
-    --cor-destaque: #D4AF37;
-    --cor-texto: #E6E8EF;
-    --cor-raio: #2BDEFD;
+    --cor-fundo: #01080E;
+    --cor-principal: #0B0D20;
+    --cor-secundaria: #212333; 
+    --cor-destaque: #2BDEFD;
+    --cor-dourada: #D4AF37;
+    --cor-texto: #D7F9FF;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
     max-width: 600px;
     text-align: center;
     padding: 25px;
-    border: 2px solid var(--cor-destaque);
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    border: 2px solid var(--cor-dourada);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(43, 222, 253, 0.2);
 }
 
 h1 {
@@ -44,16 +44,17 @@ h1 {
 .caixa-alternativas {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 button {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
     border: 1px solid var(--cor-destaque);
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 15px;
+    padding: 15px;
     font-size: 0.95rem;
+    font-family: inherit;
     cursor: pointer;
     transition: all 0.3s;
 }
